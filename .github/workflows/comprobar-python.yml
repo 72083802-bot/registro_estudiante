@@ -1,0 +1,12 @@
+name : comprovar programa python
+on:
+push:
+jobs:
+    verificar: 
+    runss-on: ubuntu-latest
+
+
+    setpss:
+
+    - name:obtener 
+    

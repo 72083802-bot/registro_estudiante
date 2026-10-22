@@ -30,11 +30,10 @@ jobs:
       #paso 5
       #EJECUTAR EL PROGAMA
     - name: ejecutar programa 
-      run: python program.py
+      run: python programa.py
       # paso 6
       # guardamos la salida y comprobanos que el resultado sea 24 
     - name: comprobar resultado esperado
       run: 
         python programa.py > salida.txt
         grep "total:24" salida.txt
-        

@@ -6,4 +6,4 @@ print("===cafeteria quillabamba===")
 print(f"Producto: {producto}")
 print(f"Precio: ${precio}")
 print(f"Cantidad: {cantidad}")
-print(f"Total: ${total}")
+print(f"Total: ${total}"

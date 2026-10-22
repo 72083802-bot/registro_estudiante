@@ -1,12 +1,40 @@
 name : comprovar programa python
 on:
-push:
+    push:
 jobs:
-    verificar: 
-    runss-on: ubuntu-latest
+  verificar: 
+    runs-on: ubuntu-latest
 
 
-    setpss:
+    steps:
 
-    - name:obtener 
-    
+    - name: obtener repositoro
+      uses: actions/checkut@v7
+
+      # paso 2 
+      #preparar python dentro de entorno de ejecucion 
+    - name: configurar python 
+      uses: actions/setup-pythin@v7
+      with:
+          #vercion de python que utilizara el trabajo
+          python-version: '3.14' 
+      #PASO 3  
+      #comprobamos que programa.py existe dentro del repositorio 
+    - name: verificar archivo 
+      run: test -f programa.py
+
+      #PASO 4 
+      #comprobar que programa.py no tenga errores de sintaxis
+    - name: verificar sintaxis
+      run: python -m py_compile programa.py
+      #paso 5
+      #EJECUTAR EL PROGAMA
+    - name: ejecutar programa 
+      run: python program.py
+      # paso 6
+      # guardamos la salida y comprobanos que el resultado sea 24 
+    - name: comprobar resultado esperado
+      run: 
+        python programa.py > salida.txt
+        grep "total:24" salida.txt
+        
